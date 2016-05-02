@@ -1,7 +1,8 @@
 (function() {
   angular.module('MyApp', [
     'ui.router',
-    'TestModule'
+    'PlayLists',
+    'PlayList'
   ]);
 
   angular.module('MyApp')
