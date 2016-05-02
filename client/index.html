@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Playlistr</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <title></title>
 </head>
 <body>
-  <div ng-app="Playlistr">
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Playlistr</h1> 
-        <p>A sweet new app for playlist management</p> 
-      </div>
-      <p>This is some text.</p> 
-      <p>This is another text.</p> 
-    </div>
+  <div ng-app="MyApp">
+    <div ui-view />
   </div>
+
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <script src="test/test.module.js"></script>
+  <script src="test/test.router.js"></script>
+  <script src="test/test.controller.js"></script>
+
+  <script src="app.js"></script>
 </body>
 </html>
