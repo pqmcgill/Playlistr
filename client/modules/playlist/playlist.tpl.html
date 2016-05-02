@@ -1,5 +1,10 @@
 <div>
   {{ vm.playlistId }}
   <a ui-sref="playlist.addSong({ playlistId: vm.playlistId })">Add Song</a>
-  <ui-view />
+  <ui-view></ui-view>
+  <ul>
+    <li ng-repeat="song in vm.playlist">
+      {{ song.songUri }} picked by {{ song.username }}
+    </li>
+  </ul>
 </div>
