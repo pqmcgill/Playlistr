@@ -1,13 +1,13 @@
 'use strict';
 
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-let port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 //test data
 var playlists = {
@@ -99,5 +99,5 @@ app.post('/playlists/:title/songs', function(req, res) {
 });
 
 app.listen(port, function () {
-  console.log('App is running on port ' + port);
+  console.log('Server is running on port ' + port);
 });
