@@ -2,8 +2,8 @@
   <h1>PlayLists Page</h1>
   <ul>
     <li ng-repeat="playlist in vm.playlists">
-      {{ playlist.name }}
-      <a ui-sref="playlist({ playlistId: playlist.id })">View</a>
+      {{ playlist }}
+      <a ui-sref="playlist({ playlistId: playlist })">View</a>
     </li>
   </ul>
 </div>
