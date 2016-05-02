@@ -1,0 +1,24 @@
+{
+  "name": "playlstr",
+  "version": "1.0.0",
+  "description": "Interactive playlist creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pqmcgill/Playlistr.git"
+  },
+  "author": "Patrick McGill, Jeff Halvorsen, Rachel Nowinski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pqmcgill/Playlistr/issues"
+  },
+  "homepage": "https://github.com/pqmcgill/Playlistr#readme",
+  "dependencies": {
+    "angular": "^1.4.10",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6"
+  }
+}
