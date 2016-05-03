@@ -80,7 +80,7 @@ app.post('/playlists', function(req, res) {
 app.post('/playlists/:title/songs', function(req, res) {
 	var songUri = req.body.songUri;
 	var username = req.body.username;
-	var title = req.params.title
+	var title = req.params.title;
 
 	//check if playlist exists
 	if(playlists[title]) {
@@ -88,7 +88,7 @@ app.post('/playlists/:title/songs', function(req, res) {
 			username: username,
 			songUri: songUri,
 			played: false
-		})
+		});
 
 		console.log('song added to playlist.');
 		res.sendStatus(200);

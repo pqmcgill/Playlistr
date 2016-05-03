@@ -11,7 +11,7 @@ var nodemon = require('gulp-nodemon');
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src(['client/**/*.js', 'server.js'])
+    return gulp.src(['client/**/*.js', 'server/server.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -25,7 +25,7 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('client/**/*.js')
+    return gulp.src(['client/**/*.js', 'node_modules/angular/**/*.js', 'node_modules/angular-ui-router/**/*.js', 'node_modules/bootstrap/**/*.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('all.min.js'))
@@ -33,9 +33,10 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
+
 gulp.task('start', function () {
   nodemon({
-    script: 'server.js',
+    script: 'server/server.js',
     ext: 'js html',
     env: { 'NODE_ENV': 'development' }
   })
@@ -43,7 +44,7 @@ gulp.task('start', function () {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['server.js', 'client/**/*.js', 'client/**/*.html'], ['lint', 'scripts']);
+    gulp.watch(['server/server.js', 'client/**/*.js', 'client/**/*.html'], ['lint', 'scripts']);
     gulp.watch('scss/*.scss', ['sass']);
 });
 
