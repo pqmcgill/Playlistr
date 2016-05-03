@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var nodemon = require('gulp-nodemon');
+var htmlmin = require('gulp-htmlmin');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -33,6 +34,13 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
+gulp.task('htmlminify', function() {
+  return gulp.src('client/index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist'))
+    .pipe(rename('index.html'));
+});
+
 
 gulp.task('start', function () {
   nodemon({
@@ -44,9 +52,9 @@ gulp.task('start', function () {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['server/server.js', 'client/**/*.js', 'client/**/*.html'], ['lint', 'scripts']);
+    gulp.watch(['server/server.js', 'client/**/*.js', 'client/**/*.html'], ['lint', 'scripts', 'htmlminify']);
     gulp.watch('scss/*.scss', ['sass']);
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'start']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'start', 'htmlminify']);
